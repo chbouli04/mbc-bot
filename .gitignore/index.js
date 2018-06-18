@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
-var prefix = "!"
+var prefix = "$"
 bot.login(token)
 bot.on('message', function (message) {
     if (message.content === 'sésame ?' ){
