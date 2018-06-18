@@ -3,6 +3,7 @@ const bot = new Discord.Client()
 const token = process.env.TOKEN
 var prefix = "$"
 bot.login(token)
+bot.user.setActivity(prefix+'help')
 bot.on('message', function (message) {
     if (message.content === 'sésame ?' ){
         message.reply ('ouvre toi !')
