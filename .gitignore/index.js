@@ -62,15 +62,15 @@ bot.on('message', function (message) {
             color: 3447003,
             title: "LISTE DES COMMANDES :",
             fields: [{
-                name: "**__!help__**",
+                name: "**__"+prefix+"help__**",
                 value: "Affiche cette page."
               },
               {
-                name: "**__!game__**",
+                name: "**__"+prefix+"game__**",
                 value: "Indique à quel jeu tu es en train de jouer."
               },
               {
-                name: "**__!party <party_info>__**",
+                name: "**__"+prefix+"party <party_info>__**",
                 value: "Indique dans le nom de ton channel vocal actuelle les informations de ta partie"
               }]
         }})
