@@ -17,7 +17,7 @@ bot.on('message', function (message) {
         const command = args.shift().toLowerCase();
         
         if (command === 'party' ){
-            if(message.member.highestRole.name !== 'Chat de goutière' && message.member.highestRole.name !== '@everyone'){
+            if(message.member.highestRole.name !== 'Chat de gouttière' && message.member.highestRole.name !== '@everyone'){
                 const voiceChannel = message.member.voiceChannel
                 var rightgame = false
                 try{
