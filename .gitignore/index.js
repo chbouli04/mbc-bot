@@ -57,24 +57,27 @@ bot.on('message', function (message) {
 
 
 
-    if (command === 'help'){
-        message.channel.send({embed: {
-            color: 3447003,
-            title: "LISTE DES COMMANDES :",
-            fields: [{
-                name: "**__"+prefix+"help__**",
-                value: "Affiche cette page."
-              },
-              {
-                name: "**__"+prefix+"game__**",
-                value: "Indique à quel jeu tu es en train de jouer."
-              },
-              {
-                name: "**__"+prefix+"party <party_info>__**",
-                value: "Indique dans le nom de ton channel vocal actuelle les informations de ta partie"
-              }]
-        }})
-    }
+        if (command === 'help'){
+            message.channel.send({embed: {
+                color: 3447003,
+                title: "LISTE DES COMMANDES :",
+                fields: [{
+                    name: "**__"+prefix+"help__**",
+                    value: "Affiche cette page."
+                },
+                {
+                    name: "**__"+prefix+"game__**",
+                    value: "Indique à quel jeu tu es en train de jouer."
+                },
+                {
+                    name: "**__"+prefix+"party <party_info>__**",
+                    value: "Indique dans le nom de ton channel vocal actuelle les informations de ta partie"
+                }]
+            }})
+        }
+        if (command === 'test'){
+            massage.channel.send(message.member.voiceChannel.members)
+        }
     } 
 })
 
