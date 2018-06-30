@@ -1,8 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
-const prefix = process.env.PREFIX
-
+const prefix = '$'
 
 bot.on('message', function (message) { 
     if (message.content.startsWith(prefix) && message.channel.name.toString().includes('bot')){
