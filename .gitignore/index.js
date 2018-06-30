@@ -1,18 +1,11 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
-var prefix = "$"
+var prefix = process.env.PREFIX
 bot.login(token)
-bot.on('message', function (message) {
-    if (message.content === 'sésame ?' ){
-        message.reply ('ouvre toi !')
-    }
-} )
 
-
-
-bot.on('message', function (message) {
-    if (message.content.startsWith(prefix)){
+bot.on('message', function (message) { 
+    if (message.content.startsWith(prefix) && message.channel.name.toString().includes('bot')){
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         
@@ -75,18 +68,15 @@ bot.on('message', function (message) {
                 }]
             }})
         }
-        if (command === 'test'){
-            massage.channel.send(message.member.voiceChannel.members)
-        }
-    } 
-})
-
+       
+        
+        
 bot.on('voiceStateUpdate', (oldMember, newMember) =>{
     let newChannel = newMember.voiceChannel
     let oldChannel = oldMember.voiceChannel
     if (oldChannel !== undefined && oldChannel !== newChannel){
-        let users = oldChannel.recipients
-        if (users === undefined){
+        let users = oldChannel.members.size
+        if (users === 0){
             oldChannel.setName(oldChannel.name.split(" -",1).toString())
         }
     }     
