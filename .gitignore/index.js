@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
-var prefix = process.env.PREFIX
+const prefix = process.env.PREFIX
 
 
 bot.on('message', function (message) { 
