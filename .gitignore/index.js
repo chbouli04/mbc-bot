@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
-const prefix = '$'
+const prefix = process.env.PREFIX
 bot.login(token)
 bot.on('message', function (message) { 
     if (message.content.startsWith(prefix) && message.channel.name.toString().includes('bot')){
@@ -34,18 +34,16 @@ bot.on('message', function (message) {
             }    
         }
 
-        
 
-    if (command === 'game' ){
-        try{
-            message.reply(message.guild.member(message.member.id).presence.game.name) 
+        if (command === 'game' ){
+            try{
+                message.reply(message.guild.member(message.member.id).presence.game.name) 
+            }
+            catch(error){
+                message.reply('Tu ne joues à aucun jeu !')
+            }
+            finally{}
         }
-        catch(error)
-        {
-            message.reply('Tu ne joues à aucun jeu !')
-        }
-        finally{}
-    }
 
 
 
@@ -67,7 +65,8 @@ bot.on('message', function (message) {
                 }]
             }})
         }
-       
+    }
+})    
         
         
 bot.on('voiceStateUpdate', (oldMember, newMember) =>{
@@ -80,5 +79,3 @@ bot.on('voiceStateUpdate', (oldMember, newMember) =>{
         }
     }     
 })
-
-
