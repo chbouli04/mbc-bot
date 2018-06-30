@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const bot = new Discord.Client()
 const token = process.env.TOKEN
 const prefix = '$'
-
+bot.login(token)
 bot.on('message', function (message) { 
     if (message.content.startsWith(prefix) && message.channel.name.toString().includes('bot')){
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -81,4 +81,4 @@ bot.on('voiceStateUpdate', (oldMember, newMember) =>{
     }     
 })
 
-bot.login(token)
+
